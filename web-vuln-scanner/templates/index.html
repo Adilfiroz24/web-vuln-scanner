@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Vulnerability Scanner</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        .header {
+            background: #2c3e50;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        .header h1 { font-size: 2.5em; margin-bottom: 10px; }
+        .header p { opacity: 0.9; }
+        .scan-form {
+            padding: 30px;
+            background: #f8f9fa;
+            border-bottom: 1px solid #dee2e6;
+        }
+        .form-group { margin-bottom: 20px; }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #495057;
+        }
+        input[type="url"], input[type="number"] {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #ced4da;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+        input:focus { border-color: #667eea; outline: none; }
+        button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 14px 30px;
+            font-size: 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        button:hover { background: #5a67d8; }
+        button:disabled { background: #a0aec0; cursor: not-allowed; }
+        .results-section { padding: 30px; }
+        .results-section h2 {
+            margin-bottom: 15px;
+            color: #2d3748;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 8px;
+        }
+        #log {
+            background: #1e1e2f;
+            color: #f8f8f2;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            white-space: pre-wrap;
+            max-height: 300px;
+            overflow-y: auto;
+            margin-bottom: 30px;
+        }
+        #vulnerabilities {
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        .vuln-item {
+            border-left: 4px solid;
+            margin: 10px 0;
+            padding: 12px;
+            background: #f8f9fa;
+            border-radius: 0 8px 8px 0;
+        }
+        .vuln-critical { border-color: #dc3545; }
+        .vuln-high { border-color: #fd7e14; }
+        .vuln-medium { border-color: #ffc107; }
+        .vuln-low { border-color: #367d80; }
+        .loader { display: none; text-align: center; margin: 20px 0; }
+        .loader.active { display: block; }
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 10px;
+        }
+        @keyframes spin { 0% { transform: rotate(0); } 100% { transform: rotate(360deg); } }
+        .error-message {
+            background: #fed7d7;
+            color: #9b2c2c;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #c53030;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🛡️ Web Vulnerability Scanner</h1>
+            <p>Real-time XSS, SQLi, CSRF detection (OWASP Top 10)</p>
+        </div>
+        <div class="scan-form">
+            <form id="scanForm">
+                <div class="form-group">
+                    <label for="url">Target URL:</label>
+                    <input type="url" id="url" name="url" placeholder="https://example.com" required value="http://testphp.vulnweb.com">
+                </div>
+                <div class="form-group">
+                    <label for="max_pages">Max pages to crawl:</label>
+                    <input type="number" id="max_pages" name="max_pages" min="1" max="50" value="10">
+                </div>
+                <button type="submit" id="scanBtn">🚀 Start Real-Time Scan</button>
+            </form>
+            <div class="loader" id="loader">
+                <div class="spinner"></div>
+                <p>Scanning... This may take a few minutes.</p>
+            </div>
+        </div>
+        <div class="results-section">
+            <h2>📋 Scan Log</h2>
+            <div id="log">-- Ready to scan --</div>
+            <h2>⚠️ Detected Vulnerabilities</h2>
+            <div id="vulnerabilities">-- None yet --</div>
+        </div>
+    </div>
+
+    <script>
+        let eventSource = null;
+
+        document.getElementById('scanForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const urlInput = document.getElementById('url');
+            const maxPagesInput = document.getElementById('max_pages');
+            const scanBtn = document.getElementById('scanBtn');
+            const loader = document.getElementById('loader');
+            const logDiv = document.getElementById('log');
+            const vulnDiv = document.getElementById('vulnerabilities');
+
+            if (!urlInput.value) {
+                logDiv.innerHTML = '<div class="error-message">❌ Please enter a target URL.</div>';
+                return;
+            }
+
+            // Clear previous data
+            logDiv.innerHTML = '';
+            vulnDiv.innerHTML = '';
+
+            // Disable button and show loader
+            scanBtn.disabled = true;
+            loader.classList.add('active');
+
+            // Close any existing connection
+            if (eventSource) {
+                eventSource.close();
+            }
+
+            // Build URL with query parameters
+            const params = new URLSearchParams({
+                url: urlInput.value,
+                max_pages: maxPagesInput.value
+            });
+            const streamUrl = `/scan/stream?${params.toString()}`;
+            console.log('Connecting to:', streamUrl);
+            logDiv.innerHTML += `🔄 Connecting to ${streamUrl}\n`;
+
+            eventSource = new EventSource(streamUrl);
+
+            eventSource.onopen = function() {
+                console.log('SSE connection opened');
+                logDiv.innerHTML += '🔄 Connection established\n';
+            };
+
+            eventSource.onmessage = function(event) {
+                console.log('SSE raw data:', event.data);
+                try {
+                    const data = JSON.parse(event.data);
+                    console.log('SSE parsed:', data);
+
+                    if (data.type === 'status') {
+                        logDiv.innerHTML += `🔄 ${data.message}\n`;
+                        logDiv.scrollTop = logDiv.scrollHeight;
+                    }
+                    else if (data.type === 'vuln') {
+                        const v = data.vulnerability;
+                        const severityClass = 
+                            v.severity === 'Critical' ? 'vuln-critical' :
+                            v.severity === 'High' ? 'vuln-high' :
+                            v.severity === 'Medium' ? 'vuln-medium' : 'vuln-low';
+                        const vulnHtml = `
+                            <div class="vuln-item ${severityClass}">
+                                <strong>${v.type}</strong> <span style="color: #666;">(${v.severity})</span><br>
+                                <span style="font-size: 0.9em;">URL: ${v.url}</span><br>
+                                <span style="font-size: 0.9em;">Parameter: ${v.parameter || 'N/A'}</span><br>
+                                <span style="font-size: 0.9em;">Payload: ${v.payload || 'N/A'}</span><br>
+                                <span style="font-size: 0.9em;">OWASP: ${v.owasp || 'N/A'}</span>
+                            </div>
+                        `;
+                        vulnDiv.innerHTML += vulnHtml;
+                        logDiv.innerHTML += ` Found ${v.type} at ${v.url}\n`;
+                        logDiv.scrollTop = logDiv.scrollHeight;
+                    }
+                    else if (data.type === 'complete') {
+                        logDiv.innerHTML += ` Scan completed! Total vulnerabilities: ${data.summary.vulnerabilities.length}\n`;
+                        finishScan();
+                    }
+                    else if (data.type === 'error') {
+                        logDiv.innerHTML += ` Server error: ${data.message}\n`;
+                        finishScan();
+                    }
+                } catch (err) {
+                    console.error('Parse error:', err, 'Data:', event.data);
+                    logDiv.innerHTML += ` Received malformed data: ${event.data}\n`;
+                }
+            };
+
+            eventSource.onerror = function(err) {
+                console.error('EventSource error:', err);
+                logDiv.innerHTML += ' Connection lost. Please try again.\n';
+                finishScan();
+            };
+
+            function finishScan() {
+                scanBtn.disabled = false;
+                loader.classList.remove('active');
+                if (eventSource) {
+                    eventSource.close();
+                    eventSource = null;
+                }
+            }
+        });
+    </script>
+</body>
+</html>

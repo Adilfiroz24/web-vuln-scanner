@@ -1,0 +1,16 @@
+{
+    "target": "https://public-firing-range.appspot.com",
+    "crawled_urls": [
+        "https://public-firing-range.appspot.com/insecurethirdpartyscripts/index.html",
+        "https://public-firing-range.appspot.com/escape/index.html",
+        "https://public-firing-range.appspot.com/cors/index.html",
+        "https://public-firing-range.appspot.com/angular/index.html",
+        "https://public-firing-range.appspot.com/vulnerablelibraries/index.html",
+        "https://public-firing-range.appspot.com/mixedcontent/index.html",
+        "https://public-firing-range.appspot.com/tags/index.html",
+        "https://public-firing-range.appspot.com",
+        "https://public-firing-range.appspot.com/remoteinclude/index.html",
+        "https://public-firing-range.appspot.com/clickjacking/index.html"
+    ],
+    "vulnerabilities": []
+}
