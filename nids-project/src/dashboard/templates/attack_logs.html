@@ -1,0 +1,192 @@
+{% extends "base.html" %}
+
+{% block title %}Attack Logs - NIDS{% endblock %}
+
+{% block content %}
+<div class="attack-logs">
+    <div class="page-header">
+        <h1><i class="fas fa-list-alt"></i> Attack Logs</h1>
+        <div class="header-actions">
+            <button id="refresh-btn" class="btn btn-primary">
+                <i class="fas fa-sync-alt"></i> Refresh
+            </button>
+            <button id="export-btn" class="btn btn-secondary">
+                <i class="fas fa-download"></i> Export
+            </button>
+        </div>
+    </div>
+
+    <div class="table-container">
+        <table class="data-table alerts-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Category</th>
+                    <th>Message</th>
+                    <th>Source IP</th>
+                    <th>Timestamp</th>
+                    <th>Severity</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Dynamic content -->
+            </tbody>
+        </table>
+    </div>
+
+    <div class="pagination">
+        <button id="load-more" class="btn btn-outline">Load More</button>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Load initial alerts
+        if (window.dashboard) {
+            window.dashboard.loadAlertsTable();
+        }
+
+        // Setup event listeners
+        document.getElementById('refresh-btn').addEventListener('click', function() {
+            if (window.dashboard) {
+                window.dashboard.loadAlertsTable();
+            }
+        });
+
+        document.getElementById('export-btn').addEventListener('click', function() {
+            if (window.dashboard) {
+                window.dashboard.exportAlerts();
+            }
+        });
+
+        document.getElementById('load-more').addEventListener('click', function() {
+            // Implement load more functionality
+            alert('Load more functionality would be implemented here');
+        });
+    });
+</script>
+
+<style>
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+}
+
+.header-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    background: var(--glass-bg);
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    color: var(--text-primary);
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Courier New', monospace;
+    backdrop-filter: blur(10px);
+}
+
+.btn:hover {
+    background: rgba(0, 255, 255, 0.2);
+    border-color: var(--primary);
+    transform: translateY(-2px);
+}
+
+.btn-primary {
+    background: rgba(0, 255, 255, 0.2);
+    border-color: var(--primary);
+}
+
+.btn-secondary {
+    background: rgba(255, 0, 255, 0.2);
+    border-color: var(--secondary);
+}
+
+.alert-badge {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.alert-badge.port-scan {
+    background: rgba(0, 255, 255, 0.2);
+    color: var(--primary);
+}
+
+.alert-badge.syn-flood {
+    background: rgba(255, 0, 255, 0.2);
+    color: var(--secondary);
+}
+
+.alert-badge.brute-force {
+    background: rgba(255, 170, 0, 0.2);
+    color: var(--warning);
+}
+
+.alert-badge.anomaly {
+    background: rgba(255, 68, 68, 0.2);
+    color: var(--danger);
+}
+
+.severity-badge {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.severity-badge.high {
+    background: rgba(255, 68, 68, 0.3);
+    color: #ff4444;
+}
+
+.severity-badge.medium {
+    background: rgba(255, 170, 0, 0.3);
+    color: #ffaa00;
+}
+
+.severity-badge.low {
+    background: rgba(0, 255, 255, 0.3);
+    color: #00ffff;
+}
+
+.ip-address {
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+.country-flag {
+    color: var(--text-secondary);
+    font-size: 10px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+}
+
+.btn-outline:hover {
+    background: rgba(0, 255, 255, 0.1);
+}
+</style>
+{% endblock %}

@@ -1,0 +1,370 @@
+2025-11-25 03:02:54,391 - database - INFO - Database initialized successfully
+2025-11-25 03:03:13,840 - database - INFO - Database initialized successfully
+2025-11-25 03:03:14,024 - nids_controller - WARNING - Not running as Administrator. Packet capture may not work.
+2025-11-25 03:03:14,028 - nids_controller - INFO - Starting Flask server...
+2025-11-25 03:03:17,028 - nids_controller - INFO - Starting packet sniffer...
+2025-11-25 03:03:17,043 - packet_sniffer - INFO - Selected interface: Ethernet 2 - VirtualBox Host-Only Ethernet Adapter
+2025-11-25 03:03:17,044 - packet_sniffer - INFO - Starting packet capture on interface: Ethernet 2
+2025-11-25 03:03:17,044 - nids_controller - INFO - NIDS Started Successfully!
+2025-11-25 03:03:17,046 - nids_controller - INFO - Dashboard: http://localhost:5000
+2025-11-25 03:03:17,046 - nids_controller - INFO - Sniffing packets... Press Ctrl+C to stop
+2025-11-25 21:26:05,605 - database - INFO - Database initialized successfully
+2025-11-25 21:26:05,828 - nids_controller - WARNING - Not running as Administrator. Packet capture may not work.
+2025-11-25 21:26:05,832 - nids_controller - INFO - Starting Flask server...
+2025-11-25 21:26:08,832 - nids_controller - INFO - Starting packet sniffer...
+2025-11-25 21:26:08,849 - packet_sniffer - INFO - Selected interface: Ethernet 2 - VirtualBox Host-Only Ethernet Adapter
+2025-11-25 21:26:08,850 - packet_sniffer - INFO - Starting packet capture on interface: Ethernet 2
+2025-11-25 21:26:08,850 - nids_controller - INFO - NIDS Started Successfully!
+2025-11-25 21:26:08,850 - nids_controller - INFO - Dashboard: http://localhost:5000
+2025-11-25 21:26:08,851 - nids_controller - INFO - Sniffing packets... Press Ctrl+C to stop
+2025-11-25 21:32:51,668 - database - INFO - Database initialized successfully
+2025-11-25 21:32:51,800 - nids_controller - WARNING - Not running as Administrator. Packet capture may not work.
+2025-11-25 21:32:51,803 - nids_controller - INFO - Starting Flask server...
+2025-11-25 21:32:54,803 - nids_controller - INFO - Starting packet sniffer...
+2025-11-25 21:32:54,806 - packet_sniffer - INFO - Selected interface: Ethernet 2 - VirtualBox Host-Only Ethernet Adapter
+2025-11-25 21:32:54,807 - packet_sniffer - INFO - Starting packet capture on interface: Ethernet 2
+2025-11-25 21:32:54,807 - nids_controller - INFO - NIDS Started Successfully!
+2025-11-25 21:32:54,807 - nids_controller - INFO - Dashboard: http://localhost:5000
+2025-11-25 21:32:54,807 - nids_controller - INFO - Sniffing packets... Press Ctrl+C to stop
+2025-11-25 21:35:24,898 - database - INFO - Database initialized successfully
+2025-11-25 21:35:47,052 - geoip - WARNING - GeoIP API returned status 429 for 198.51.100.23
+2025-11-25 21:35:57,721 - database - INFO - Database initialized successfully
+2025-11-25 21:35:57,846 - nids_controller - INFO - Starting Flask server...
+2025-11-25 21:36:00,847 - nids_controller - INFO - Starting packet sniffer...
+2025-11-25 21:36:00,850 - packet_sniffer - INFO - Selected interface: Ethernet 2 - VirtualBox Host-Only Ethernet Adapter
+2025-11-25 21:36:00,850 - packet_sniffer - INFO - Starting packet capture on interface: Ethernet 2
+2025-11-25 21:36:00,850 - nids_controller - INFO - NIDS Started Successfully!
+2025-11-25 21:36:00,851 - nids_controller - INFO - Dashboard: http://localhost:5000
+2025-11-25 21:36:00,851 - nids_controller - INFO - Sniffing packets... Press Ctrl+C to stop
+2025-11-26 09:54:45,122 - database - INFO - Database initialized successfully
+2025-11-26 09:54:51,589 - geoip - WARNING - GeoIP API returned status 429 for 203.0.113.45
+2025-11-26 09:54:56,909 - geoip - WARNING - GeoIP API returned status 429 for Multiple
+2025-11-26 09:55:01,222 - geoip - WARNING - GeoIP API returned status 429 for 198.51.100.23
+2025-11-26 09:55:24,300 - database - INFO - Database initialized successfully
+2025-11-26 09:55:25,135 - nids_controller - INFO - Starting Flask server...
+2025-11-26 09:55:28,138 - nids_controller - INFO - Starting packet sniffer...
+2025-11-26 09:55:28,191 - packet_sniffer - INFO - Selected interface: Ethernet 2 - VirtualBox Host-Only Ethernet Adapter
+2025-11-26 09:55:28,194 - packet_sniffer - INFO - Starting packet capture on interface: Ethernet 2
+2025-11-26 09:55:28,194 - nids_controller - INFO - NIDS Started Successfully!
+2025-11-26 09:55:28,197 - nids_controller - INFO - Dashboard: http://localhost:5000
+2025-11-26 09:55:28,199 - nids_controller - INFO - Sniffing packets... Press Ctrl+C to stop
+2025-11-27 14:51:30,369 - database - INFO - Database initialized successfully
+2025-11-27 14:51:35,850 - geoip - WARNING - GeoIP API returned status 429 for 203.0.113.45
+2025-11-27 14:51:39,131 - geoip - WARNING - GeoIP API returned status 429 for Multiple
+2025-11-27 14:51:42,115 - geoip - WARNING - GeoIP API returned status 429 for 198.51.100.23
+2025-11-27 14:52:33,414 - database - INFO - Database initialized successfully
+2025-11-27 14:59:24,879 - database - INFO - Database initialized successfully
+2025-11-27 14:59:25,119 - nids_controller - INFO - Starting Flask server...
+2025-11-27 14:59:28,120 - nids_controller - INFO - Starting packet sniffer...
+2025-11-27 14:59:28,126 - packet_sniffer - INFO - Selected interface: Ethernet 2
+2025-11-27 14:59:28,126 - packet_sniffer - INFO - Starting packet capture on interface: Ethernet 2
+2025-11-27 14:59:28,126 - nids_controller - INFO - NIDS Started Successfully!
+2025-11-27 14:59:28,127 - nids_controller - INFO - Dashboard: http://localhost:5000
+2025-11-27 14:59:28,127 - nids_controller - INFO - Sniffing packets... Press Ctrl+C to stop
+2025-11-27 14:59:30,110 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 14:59:32,115 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 14:59:34,128 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 14:59:36,141 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 14:59:38,154 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 14:59:40,155 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 14:59:42,167 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 14:59:44,179 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 14:59:46,194 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 14:59:48,197 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 14:59:50,198 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 14:59:52,206 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 14:59:54,219 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 14:59:56,233 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 14:59:58,247 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:00:00,252 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:00:02,260 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:00:04,261 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:00:06,262 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:00:08,269 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:00:10,281 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:00:12,283 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:00:14,285 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:00:16,291 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:00:18,303 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:00:20,315 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:00:22,322 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:00:24,338 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:00:26,351 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:00:28,363 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:00:30,378 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:00:32,389 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:00:34,400 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:00:36,409 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:00:38,418 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:00:40,429 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:00:42,439 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:00:44,444 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:00:46,446 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:00:48,460 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:00:50,464 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:00:52,473 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:00:54,475 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:00:56,477 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:00:58,485 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:01:00,496 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:01:02,504 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:01:04,513 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:01:06,524 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:01:08,526 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:01:10,536 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:01:12,541 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:01:14,554 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:01:16,582 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:01:18,593 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:01:20,607 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:01:22,623 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:01:24,635 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:01:26,648 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:01:28,655 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:01:30,667 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:01:32,677 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:01:34,692 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:01:36,706 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:01:38,709 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:01:40,723 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:01:42,734 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:01:44,744 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:01:46,755 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:01:48,767 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:01:50,781 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:01:52,793 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:01:54,804 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:01:56,813 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:01:58,828 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:02:00,837 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:02:02,844 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:02:04,859 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:02:06,874 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:02:08,885 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:02:10,889 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:02:12,890 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:02:14,904 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:02:16,906 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:02:18,910 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:02:20,916 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:02:22,930 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:02:24,945 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:02:26,947 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:02:28,954 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:02:30,963 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:02:32,967 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:02:34,978 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:02:36,989 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:02:39,005 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:02:41,013 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:02:43,025 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:02:45,036 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:02:47,043 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:02:49,053 - packet_sniffer - INFO - Processed 100 packets...
+2025-11-27 15:02:49,054 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:02:51,068 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:02:53,075 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:02:55,088 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:02:57,094 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:02:59,108 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:03:01,112 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:03:03,126 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:03:05,141 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:03:07,143 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:03:09,150 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:03:11,165 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:03:13,176 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:03:15,183 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:03:17,190 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:03:19,206 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:03:21,220 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:03:23,227 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:03:25,229 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:03:27,237 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:03:29,245 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:03:31,245 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:03:33,247 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:03:35,261 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:03:37,270 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:03:39,280 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:03:41,286 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:03:43,301 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:03:45,313 - packet_sniffer - ERROR - Error processing packet: name 'DNS' is not defined
+2025-11-27 15:03:45,760 - packet_sniffer - INFO - Stopping packet capture
+2025-11-27 15:03:45,760 - nids_controller - INFO - NIDS Stopped
+2025-11-27 15:03:59,394 - database - INFO - Database initialized successfully
+2025-11-27 15:03:59,520 - nids_controller - INFO - Starting Flask server...
+2025-11-27 15:04:02,521 - nids_controller - INFO - Starting packet sniffer...
+2025-11-27 15:04:02,525 - packet_sniffer - INFO - Selected interface: Ethernet 2
+2025-11-27 15:04:02,525 - packet_sniffer - INFO - Starting packet capture on interface: Ethernet 2
+2025-11-27 15:04:02,526 - nids_controller - INFO - NIDS Started Successfully!
+2025-11-27 15:04:02,526 - nids_controller - INFO - Dashboard: http://localhost:5000
+2025-11-27 15:04:02,527 - nids_controller - INFO - Sniffing packets... Press Ctrl+C to stop
+2025-11-27 15:04:03,378 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:04:05,392 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:04:07,408 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:04:09,420 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:04:11,435 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:04:13,449 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:04:15,464 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:04:17,466 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:04:19,481 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:04:21,484 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:04:23,500 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:04:25,501 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:04:27,514 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:04:29,516 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:04:31,523 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:04:33,527 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:04:35,541 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:04:37,545 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:04:39,553 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:04:41,556 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:04:43,561 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:04:45,570 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:04:47,584 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:04:49,587 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:04:51,593 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:04:53,609 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:04:55,618 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:04:57,630 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:04:59,642 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:05:01,651 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:05:03,660 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:05:05,664 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:05:07,668 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:05:09,670 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:05:11,685 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:05:13,695 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:05:15,698 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:05:17,710 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:05:19,724 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:05:21,731 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:05:23,737 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:05:25,749 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:05:27,761 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:05:29,771 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:05:31,772 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:05:33,775 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:05:35,780 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:05:37,795 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:05:39,806 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:05:41,817 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:05:43,831 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:05:45,844 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:05:47,849 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:05:49,861 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:05:51,866 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:05:53,867 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:05:55,883 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:05:57,898 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:05:59,901 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:06:01,904 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:06:03,918 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:06:05,920 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:06:07,928 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:06:09,935 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:06:11,938 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:06:13,952 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:06:15,966 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:06:17,978 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:06:19,981 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:06:21,996 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:06:24,011 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:06:26,013 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:06:28,016 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:06:30,031 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:06:32,047 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:06:34,060 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:06:36,075 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:06:38,080 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:06:40,081 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:06:42,095 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:06:44,101 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:06:46,114 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:06:48,120 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:06:50,126 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:06:52,139 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:06:54,154 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:06:56,156 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-27 15:06:56,520 - packet_sniffer - INFO - Stopping packet capture
+2025-11-27 15:06:56,520 - nids_controller - INFO - NIDS Stopped
+2025-11-29 17:26:08,279 - database - INFO - Database initialized successfully
+2025-11-29 17:26:08,519 - nids_controller - INFO - Starting Flask server...
+2025-11-29 17:26:11,520 - nids_controller - INFO - Starting packet sniffer...
+2025-11-29 17:26:11,538 - packet_sniffer - INFO - Selected interface: Ethernet 2
+2025-11-29 17:26:11,539 - nids_controller - INFO - NIDS Started Successfully!
+terface: Ethernet 2
+2025-11-29 17:26:11,540 - nids_controller - INFO - Dashboard: http://localhost:5000
+2025-11-29 17:26:11,541 - nids_controller - INFO - Sniffing packets... Press Ctrl+C to stop
+2025-11-29 17:26:13,253 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-29 17:26:15,269 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-29 17:26:22,693 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-29 17:26:23,289 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-29 17:26:23,296 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-29 17:26:23,301 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-29 17:26:25,296 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-29 17:26:27,308 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-29 17:26:29,315 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-29 17:26:31,325 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-29 17:26:33,331 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-29 17:26:35,345 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-29 17:26:37,346 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-29 17:26:39,360 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-29 17:26:41,362 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-29 17:26:43,378 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-29 17:26:45,392 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-29 17:26:47,393 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-29 17:26:49,397 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-29 17:26:51,400 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-29 17:26:53,414 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-29 17:26:55,419 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-29 17:26:57,428 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-29 17:26:59,438 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-29 17:27:01,451 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-29 17:27:03,453 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-29 17:27:05,465 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-29 17:27:07,479 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-29 17:27:09,480 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-29 17:27:11,494 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-29 17:27:13,506 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-29 17:27:15,511 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-29 17:27:17,521 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-29 17:27:19,530 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-29 17:27:21,531 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-30 22:10:59,602 - database - INFO - Database initialized successfully
+2025-11-30 22:10:59,838 - nids_controller - INFO - Starting Flask server...
+2025-11-30 22:11:02,838 - nids_controller - INFO - Starting packet sniffer...
+2025-11-30 22:11:02,861 - packet_sniffer - INFO - Selected interface: Ethernet 2
+2025-11-30 22:11:02,862 - nids_controller - INFO - NIDS Started Successfully!
+terface: Ethernet 2
+2025-11-30 22:11:02,863 - nids_controller - INFO - Dashboard: http://localhost:5000
+2025-11-30 22:11:02,864 - nids_controller - INFO - Sniffing packets... Press Ctrl+C to stop
+2025-11-30 22:11:04,566 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-30 22:11:06,574 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-30 22:11:10,164 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-30 22:11:10,589 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-30 22:11:12,591 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-30 22:11:14,605 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-30 22:11:16,176 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-30 22:11:16,612 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-30 22:11:17,187 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-30 22:11:18,618 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-30 22:11:19,200 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-30 22:11:20,632 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-30 22:11:22,647 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-30 22:11:24,656 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-30 22:11:26,667 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-30 22:11:28,670 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-30 22:11:30,679 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-30 22:11:32,691 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-30 22:11:34,693 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-30 22:11:36,703 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-30 22:11:38,705 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-30 22:11:40,712 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-30 22:11:42,717 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-30 22:11:44,723 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-30 22:11:46,728 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-30 22:11:48,738 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-30 22:11:50,744 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1
+2025-11-30 22:11:52,745 - rule_engine - WARNING - ALERT: Port Scan - NULL scan detected from 192.168.56.1

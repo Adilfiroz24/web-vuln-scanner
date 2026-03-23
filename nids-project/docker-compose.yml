@@ -1,0 +1,50 @@
+version: '3.8'
+
+services:
+  nids:
+    build: .
+    container_name: nids-system
+    ports:
+      - "5000:5000"
+    network_mode: "host"
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+    privileged: true
+    volumes:
+      - ./src/storage:/app/src/storage
+      - ./signature_rules.json:/app/signature_rules.json
+    environment:
+      - SECRET_KEY=nids-docker-secret-key-2024
+    restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  nids-test:
+    build: .
+    container_name: nids-test
+    network_mode: "host"
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+    privileged: true
+    volumes:
+      - ./src/storage:/app/src/storage
+      - ./signature_rules.json:/app/signature_rules.json
+    command: ["python", "test_traffic.py"]
+    profiles:
+      - test
+
+  nids-quicktest:
+    build: .
+    container_name: nids-quicktest
+    network_mode: "host"
+    volumes:
+      - ./src/storage:/app/src/storage
+      - ./signature_rules.json:/app/signature_rules.json
+    command: ["python", "quick_test.py"]
+    profiles:
+      - test

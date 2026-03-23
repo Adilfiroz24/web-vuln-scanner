@@ -1,0 +1,320 @@
+{% extends "base.html" %}
+
+{% block title %}Reports - NIDS{% endblock %}
+
+{% block content %}
+<div class="reports">
+    <div class="page-header">
+        <h1><i class="fas fa-chart-bar"></i> Security Reports</h1>
+        <div class="header-actions">
+            <button id="generate-report" class="btn btn-primary">
+                <i class="fas fa-file-pdf"></i> Generate PDF Report
+            </button>
+        </div>
+    </div>
+
+    <div class="reports-grid">
+        <!-- Summary Card -->
+        <div class="report-card full-width">
+            <div class="report-header">
+                <h3><i class="fas fa-chart-line"></i> Security Summary</h3>
+                <span class="report-period">Last 24 Hours</span>
+            </div>
+            <div class="report-content">
+                <div class="summary-stats">
+                    <div class="summary-item">
+                        <span class="summary-label">Total Alerts</span>
+                        <span class="summary-value" id="report-total-alerts">0</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Top Threat</span>
+                        <span class="summary-value" id="report-top-threat">-</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Most Active IP</span>
+                        <span class="summary-value" id="report-top-ip">-</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Attack Peak</span>
+                        <span class="summary-value" id="report-peak-time">-</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Threat Distribution -->
+        <div class="report-card">
+            <div class="report-header">
+                <h3><i class="fas fa-pie-chart"></i> Threat Distribution</h3>
+            </div>
+            <div class="report-content">
+                <canvas id="reportCategoriesChart" height="200"></canvas>
+            </div>
+        </div>
+
+        <!-- Timeline Report -->
+        <div class="report-card">
+            <div class="report-header">
+                <h3><i class="fas fa-chart-line"></i> Activity Timeline</h3>
+            </div>
+            <div class="report-content">
+                <canvas id="reportTimelineChart" height="200"></canvas>
+            </div>
+        </div>
+
+        <!-- Top Attackers Report -->
+        <div class="report-card">
+            <div class="report-header">
+                <h3><i class="fas fa-bug"></i> Top Attackers</h3>
+            </div>
+            <div class="report-content">
+                <div id="report-attackers-list">
+                    <!-- Dynamic content -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Geographic Distribution -->
+        <div class="report-card">
+            <div class="report-header">
+                <h3><i class="fas fa-globe"></i> Geographic Distribution</h3>
+            </div>
+            <div class="report-content">
+                <div id="report-geo-map" style="height: 200px;"></div>
+            </div>
+        </div>
+
+        <!-- Protocol Analysis -->
+        <div class="report-card">
+            <div class="report-header">
+                <h3><i class="fas fa-network-wired"></i> Protocol Analysis</h3>
+            </div>
+            <div class="report-content">
+                <canvas id="reportProtocolChart" height="200"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        loadReportData();
+        
+        document.getElementById('generate-report').addEventListener('click', function() {
+            generatePDFReport();
+        });
+    });
+
+    async function loadReportData() {
+        try {
+            const response = await fetch('/api/stats');
+            const data = await response.json();
+            updateReportData(data);
+        } catch (error) {
+            console.error('Error loading report data:', error);
+        }
+    }
+
+    function updateReportData(stats) {
+        // Update summary
+        document.getElementById('report-total-alerts').textContent = stats.total_alerts || 0;
+        
+        // Find top threat
+        const categories = stats.category_count || {};
+        const topThreat = Object.keys(categories).reduce((a, b) => 
+            categories[a] > categories[b] ? a : b, 'None'
+        );
+        document.getElementById('report-top-threat').textContent = topThreat;
+        
+        // Find top IP
+        const topAttacker = stats.top_attackers?.[0];
+        document.getElementById('report-top-ip').textContent = topAttacker ? topAttacker.ip : '-';
+        
+        // Update charts
+        updateReportCharts(stats);
+        updateReportAttackers(stats.top_attackers || []);
+    }
+
+    function updateReportCharts(stats) {
+        // Similar to main dashboard charts but for report view
+        if (stats.category_count) {
+            createReportChart('reportCategoriesChart', 'doughnut', stats.category_count);
+        }
+        if (stats.alerts_over_time) {
+            createReportChart('reportTimelineChart', 'line', stats.alerts_over_time);
+        }
+        if (stats.protocol_distribution) {
+            createReportChart('reportProtocolChart', 'pie', stats.protocol_distribution);
+        }
+    }
+
+    function createReportChart(canvasId, type, data) {
+        const ctx = document.getElementById(canvasId)?.getContext('2d');
+        if (!ctx) return;
+
+        // Simple chart creation for reports
+        const chart = new Chart(ctx, {
+            type: type,
+            data: prepareChartData(type, data),
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: '#ffffff',
+                            font: { size: 10 }
+                        }
+                    }
+                }
+            }
+        });
+    }
+
+    function prepareChartData(type, data) {
+        // Prepare data based on chart type
+        if (type === 'doughnut' || type === 'pie') {
+            return {
+                labels: Object.keys(data),
+                datasets: [{
+                    data: Object.values(data),
+                    backgroundColor: ['#00ffff', '#ff00ff', '#ffff00', '#00ff88', '#ff4444']
+                }]
+            };
+        } else if (type === 'line') {
+            return {
+                labels: data.map(item => new Date(item.time).toLocaleTimeString()),
+                datasets: [{
+                    label: 'Alerts',
+                    data: data.map(item => item.count),
+                    borderColor: '#00ffff',
+                    backgroundColor: 'rgba(0, 255, 255, 0.1)',
+                    fill: true
+                }]
+            };
+        }
+    }
+
+    function updateReportAttackers(attackers) {
+        const container = document.getElementById('report-attackers-list');
+        if (!container) return;
+
+        container.innerHTML = attackers.slice(0, 5).map(attacker => `
+            <div class="report-attacker-item">
+                <span class="attacker-ip">${attacker.ip}</span>
+                <span class="attacker-count">${attacker.count} alerts</span>
+            </div>
+        `).join('');
+    }
+
+    function generatePDFReport() {
+        // In a real implementation, this would generate a PDF
+        // For now, we'll show an alert
+        alert('PDF report generation would be implemented here. This would create a comprehensive security report.');
+        
+        // You could implement this using:
+        // - jsPDF library on frontend
+        // - PDF generation on backend with ReportLab
+        // - HTML to PDF conversion
+    }
+</script>
+
+<style>
+.reports-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 20px;
+}
+
+.report-card {
+    background: var(--glass-bg);
+    border-radius: 15px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.report-card.full-width {
+    grid-column: 1 / -1;
+}
+
+.report-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.report-header h3 {
+    font-size: 16px;
+    color: var(--text-primary);
+}
+
+.report-header h3 i {
+    margin-right: 8px;
+    color: var(--primary);
+}
+
+.report-period {
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+.summary-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.summary-item {
+    text-align: center;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+}
+
+.summary-label {
+    display: block;
+    font-size: 12px;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.summary-value {
+    display: block;
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+.report-attacker-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.report-attacker-item:last-child {
+    border-bottom: none;
+}
+
+.attacker-count {
+    background: var(--danger);
+    color: white;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 12px;
+}
+
+#report-geo-map {
+    border-radius: 10px;
+    overflow: hidden;
+}
+</style>
+{% endblock %}

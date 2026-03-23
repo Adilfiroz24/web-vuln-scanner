@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard - NIDS{% endblock %}
+
+{% block content %}
+<div class="dashboard">
+    <div class="dashboard-header">
+        <h1><i class="fas fa-tachometer-alt"></i> Security Dashboard</h1>
+        <div class="header-stats">
+            <div class="stat-badge">
+                <span class="stat-number" id="total-alerts">0</span>
+                <span class="stat-label">Total Alerts</span>
+            </div>
+            <div class="stat-badge warning">
+                <span class="stat-number" id="active-threats">0</span>
+                <span class="stat-label">Active Threats</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="stats-grid">
+        <div class="stat-card">
+            <div class="stat-icon port-scan">
+                <i class="fas fa-search"></i>
+            </div>
+            <div class="stat-info">
+                <span class="stat-number" id="port-scans">0</span>
+                <span class="stat-label">Port Scans</span>
+            </div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-icon syn-flood">
+                <i class="fas fa-broadcast-tower"></i>
+            </div>
+            <div class="stat-info">
+                <span class="stat-number" id="syn-floods">0</span>
+                <span class="stat-label">SYN Floods</span>
+            </div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-icon brute-force">
+                <i class="fas fa-hammer"></i>
+            </div>
+            <div class="stat-info">
+                <span class="stat-number" id="brute-force">0</span>
+                <span class="stat-label">Brute Force</span>
+            </div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-icon anomaly">
+                <i class="fas fa-exclamation-triangle"></i>
+            </div>
+            <div class="stat-info">
+                <span class="stat-number" id="anomalies">0</span>
+                <span class="stat-label">Anomalies</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="charts-row">
+        <div class="chart-container">
+            <div class="chart-header">
+                <h3><i class="fas fa-chart-pie"></i> Alert Categories</h3>
+            </div>
+            <canvas id="categoriesChart"></canvas>
+        </div>
+
+        <div class="chart-container">
+            <div class="chart-header">
+                <h3><i class="fas fa-chart-line"></i> Alerts Over Time</h3>
+            </div>
+            <canvas id="timelineChart"></canvas>
+        </div>
+    </div>
+
+    <div class="bottom-row">
+        <div class="chart-container">
+            <div class="chart-header">
+                <h3><i class="fas fa-bug"></i> Top Attackers</h3>
+            </div>
+            <div id="attackers-list" class="attackers-list"></div>
+        </div>
+
+        <div class="chart-container">
+            <div class="chart-header">
+                <h3><i class="fas fa-globe-americas"></i> Attack Map</h3>
+                <div class="map-controls">
+                    <button id="refresh-map" class="btn-small">🔄</button>
+                </div>
+            </div>
+            <div id="attack-map" class="attack-map"></div>
+        </div>
+
+        <div class="chart-container">
+            <div class="chart-header">
+                <h3><i class="fas fa-network-wired"></i> Protocol Distribution</h3>
+            </div>
+            <canvas id="protocolChart"></canvas>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        initializeDashboard();
+        initializeCharts();
+        initializeAttackMap();
+        
+        document.getElementById('refresh-map').addEventListener('click', function() {
+            updateAttackMap();
+        });
+    });
+</script>
+{% endblock %}

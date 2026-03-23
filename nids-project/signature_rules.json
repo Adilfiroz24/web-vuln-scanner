@@ -1,0 +1,172 @@
+{
+    "rules": [
+        {
+            "id": "SSH_BRUTE_FORCE",
+            "description": "SSH brute force attempt detected",
+            "category": "Brute Force",
+            "protocol": "TCP",
+            "dst_port": 22,
+            "severity": "high",
+            "content": "SSH"
+        },
+        {
+            "id": "FTP_BRUTE_FORCE",
+            "description": "FTP brute force attempt detected",
+            "category": "Brute Force", 
+            "protocol": "TCP",
+            "dst_port": 21,
+            "severity": "high",
+            "content": "FTP"
+        },
+        {
+            "id": "TELNET_BRUTE_FORCE",
+            "description": "Telnet brute force attempt detected",
+            "category": "Brute Force",
+            "protocol": "TCP", 
+            "dst_port": 23,
+            "severity": "high",
+            "content": "Telnet"
+        },
+        {
+            "id": "RDP_BRUTE_FORCE",
+            "description": "RDP brute force attempt detected",
+            "category": "Brute Force",
+            "protocol": "TCP",
+            "dst_port": 3389,
+            "severity": "high"
+        },
+        {
+            "id": "SQL_INJECTION_ATTEMPT",
+            "description": "Potential SQL injection attempt",
+            "category": "Web Attack",
+            "protocol": "TCP", 
+            "dst_port": 80,
+            "severity": "high",
+            "content": "union select"
+        },
+        {
+            "id": "XSS_ATTEMPT",
+            "description": "Potential XSS attack attempt",
+            "category": "Web Attack",
+            "protocol": "TCP",
+            "dst_port": 80,
+            "severity": "medium",
+            "content": "script>"
+        },
+        {
+            "id": "BACKDOOR_PORT",
+            "description": "Connection attempt to known backdoor port",
+            "category": "Malware",
+            "protocol": "TCP",
+            "dst_port": 31337,
+            "severity": "high"
+        },
+        {
+            "id": "NETBIOS_SCAN",
+            "description": "NetBIOS port scan attempt",
+            "category": "Port Scan", 
+            "protocol": "TCP",
+            "dst_port": 139,
+            "severity": "medium"
+        },
+        {
+            "id": "SMB_EXPLOIT",
+            "description": "SMB exploit attempt",
+            "category": "Exploit",
+            "protocol": "TCP",
+            "dst_port": 445,
+            "severity": "high",
+            "content": "ETERNALBLUE"
+        },
+        {
+            "id": "DNS_EXFILTRATION",
+            "description": "Potential DNS data exfiltration",
+            "category": "Data Exfiltration",
+            "protocol": "UDP",
+            "dst_port": 53,
+            "severity": "medium",
+            "content": "base64"
+        },
+        {
+            "id": "ICMP_TUNNELING",
+            "description": "Potential ICMP tunneling detected",
+            "category": "Covert Channel",
+            "protocol": "ICMP", 
+            "severity": "medium"
+        },
+        {
+            "id": "NULL_SCAN",
+            "description": "NULL scan detected",
+            "category": "Port Scan",
+            "protocol": "TCP",
+            "flags": "",
+            "severity": "high"
+        },
+        {
+            "id": "XMAS_SCAN", 
+            "description": "XMAS scan detected",
+            "category": "Port Scan",
+            "protocol": "TCP",
+            "flags": "FPU",
+            "severity": "high"
+        },
+        {
+            "id": "FIN_SCAN",
+            "description": "FIN scan detected", 
+            "category": "Port Scan",
+            "protocol": "TCP",
+            "flags": "F",
+            "severity": "high"
+        },
+        {
+            "id": "SYN_FLOOD",
+            "description": "SYN flood attack detected",
+            "category": "DDoS",
+            "protocol": "TCP", 
+            "flags": "S",
+            "severity": "critical"
+        },
+        {
+            "id": "ADMIN_PANEL_ACCESS",
+            "description": "Admin panel access attempt",
+            "category": "Reconnaissance",
+            "protocol": "TCP",
+            "dst_port": 8080,
+            "content": "admin",
+            "severity": "medium"
+        },
+        {
+            "id": "WEB_SHELL",
+            "description": "Potential web shell access",
+            "category": "Web Attack",
+            "protocol": "TCP",
+            "dst_port": 80,
+            "content": "cmd.exe",
+            "severity": "critical"
+        },
+        {
+            "id": "METERPRETER_SHELL",
+            "description": "Metasploit meterpreter activity",
+            "category": "Exploit",
+            "protocol": "TCP",
+            "severity": "critical",
+            "content": "metsrv"
+        },
+        {
+            "id": "COIN_MINER",
+            "description": "Cryptocurrency miner communication",
+            "category": "Malware", 
+            "protocol": "TCP",
+            "dst_port": 3333,
+            "severity": "medium"
+        },
+        {
+            "id": "RANSOMWARE_COMM",
+            "description": "Potential ransomware communication",
+            "category": "Malware",
+            "protocol": "TCP",
+            "content": "WannaCry",
+            "severity": "critical"
+        }
+    ]
+}
