@@ -1,0 +1,6 @@
+Linux Hardening Audit Report - 20260314_235231
+==================================================
+Firewall        [FAIL ] iptables command not found – is it installed?
+SSH             [FAIL ] SSH config not found
+Permissions     [PASS ] No world-writable files in critical paths
+Services        [WARN ] systemctl not found – cannot check services
