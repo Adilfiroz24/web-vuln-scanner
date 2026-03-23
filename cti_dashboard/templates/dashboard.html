@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CTI Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Cyber Threat Intelligence Dashboard</h1>
+        
+        <form action="/lookup" method="post">
+            <input type="text" name="ioc" placeholder="Enter IOC (IP, domain, hash)" required>
+            <select name="type">
+                <option value="ip">IP</option>
+                <option value="domain">Domain</option>
+                <option value="hash">Hash</option>
+            </select>
+            <button type="submit">Lookup</button>
+        </form>
+        
+        {% if result %}
+        <div class="result">
+            <h2>Results for {{ ioc }}</h2>
+            {% if result.virustotal %}
+            <h3>VirusTotal</h3>
+            <ul>
+                <li>Malicious: {{ result.virustotal.malicious }}</li>
+                <li>Suspicious: {{ result.virustotal.suspicious }}</li>
+                <li>Harmless: {{ result.virustotal.harmless }}</li>
+                <li>Undetected: {{ result.virustotal.undetected }}</li>
+            </ul>
+            {% endif %}
+            
+            {% if result.abuseipdb %}
+            <h3>AbuseIPDB</h3>
+            <ul>
+                <li>Abuse Confidence Score: {{ result.abuseipdb.abuseConfidenceScore }}</li>
+                <li>Country: {{ result.abuseipdb.countryCode }}</li>
+                <li>ISP: {{ result.abuseipdb.isp }}</li>
+                <li>Domain: {{ result.abuseipdb.domain }}</li>
+                <li>Total Reports: {{ result.abuseipdb.totalReports }}</li>
+                <li>Last Reported: {{ result.abuseipdb.lastReportedAt }}</li>
+            </ul>
+            {% endif %}
+        </div>
+        {% endif %}
+        
+        <div class="chart-container">
+            <canvas id="trendChart"></canvas>
+        </div>
+        
+        <div class="recent">
+            <h2>Recent Lookups</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>IOC</th>
+                        <th>Type</th>
+                        <th>Result</th>
+                        <th>Timestamp</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in recent %}
+                    <tr>
+                        <td>{{ row[0] }}</td>
+                        <td>{{ row[1] }}</td>
+                        <td>{{ row[2] }}</td>
+                        <td>{{ row[3] }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='chart.js') }}"></script>
+</body>
+</html>
